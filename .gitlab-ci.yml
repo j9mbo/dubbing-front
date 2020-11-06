@@ -13,4 +13,5 @@ test_applcation:
   stage: test
   image: node:10-alpine
   script:
+    - npm install
     - npm test
