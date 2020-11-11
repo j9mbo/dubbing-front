@@ -1,0 +1,17 @@
+stages:
+  - install
+  - test
+
+lint_applcation:
+  stage: install
+  image: node:10-alpine
+  script:
+    - npm install
+    - npm run build
+
+test_applcation:
+  stage: test
+  image: node:10-alpine
+  script:
+    - npm install
+    - npm test
