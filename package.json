@@ -138,9 +138,8 @@
     ]
   },
   "babel": {
-    "presets": [
-      "react-app"
-    ]
+    "presets": "react-app"
+
   },
   "preset": "jest-puppeteer",
   "devDependencies": {
