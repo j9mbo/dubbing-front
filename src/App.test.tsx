@@ -1,20 +1,19 @@
 const assert = require('assert'),
 puppeteer = require('puppeteer');
-
+jest.setTimeout(10000);
 let browser, page;
 
 beforeEach(async()=>{
   browser = await puppeteer.launch({
+	args: ['--no-sandbox', '--disable-setuid-sandbox'],
     headless: true
   });
   page = await browser.newPage();
-  await page.goto("http://localhost:3000/Performance");
+  await page.goto("http://localhost/performance");
 });
-afterEach(async()=>{
-  await browser.close();
-})
 
 test("test home page url", async()=>{
   const url  = await page.url();
-  assert(url==="http://localhost:3000/Performance");
+  assert(url==="http://localhost/performance");
+
 })

@@ -1,15 +1,16 @@
 FROM node:10-alpine as builder
-
 # install and cache app dependencies
+
 COPY package*.json ./
-RUN npm install && mkdir /dubbing 
+RUN npm install && mkdir /dubbing && mv ./node_modules ./dubbing
 
 WORKDIR /dubbing
 
 COPY . .
 
-RUN npm run build 
+RUN npm run test 
 
+RUN npm run build
 
 FROM nginx:alpine
 COPY --from=builder /dubbing/build /usr/share/nginx/html
