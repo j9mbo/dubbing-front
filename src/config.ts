@@ -3,7 +3,7 @@ interface IConfigType {
 }
 
 const config: IConfigType = {
-    urlApi: "http://localhost:5000/",
+    urlApi: "http://ec2-18-132-97-13.eu-west-2.compute.amazonaws.com:5000/",
 };
 
 export default config;
