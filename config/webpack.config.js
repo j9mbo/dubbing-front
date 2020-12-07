@@ -116,7 +116,7 @@ module.exports = function(webpackEnv) {
     
     externals: {
       'Config': JSON.stringify({
-        serverUrl: "http://ec2-35-178-204-2.eu-west-2.compute.amazonaws.com:5000/"
+        serverUrl: "http://ec2-18-133-239-26.eu-west-2.compute.amazonaws.com:5000/"
       })
     },
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
